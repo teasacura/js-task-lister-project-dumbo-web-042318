@@ -13,8 +13,12 @@ class App {
   }
 
   static checkRenderTask() {
-    if (List.all !== []) {
+    if (List.all().length === 0) {
+      console.log("i'm in empty")
+      divContent.innerHTML = ''
+    } else {
       App.renderTaskForm()
     }
   }
+
 }

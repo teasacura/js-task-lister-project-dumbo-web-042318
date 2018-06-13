@@ -17,7 +17,7 @@ const all = [];
         return `
         <div>
           <h2>${this.title}
-            <button data-title="${this.title}" class="delete-list">
+            <button data-list-id="${this.id}" class="delete-list">
               X
               </button>
           </h2>

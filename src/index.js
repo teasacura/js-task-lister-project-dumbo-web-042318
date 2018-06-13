@@ -31,9 +31,12 @@ function renderTask(selectedList, newTaskDescription, newTaskPriority) {
 
 
 document.addEventListener('click', (e) => {
-  console.log(e.target)
+
   if (e.target.className === "delete-list") {
     e.target.parentElement.parentElement.remove()
+    let deleteList = List.find(e.target.dataset.listId)
+    let index = List.all().indexOf(deleteList)
+    List.all().splice(index, 1)
     App.checkRenderTask();
   }
 })
