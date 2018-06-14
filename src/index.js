@@ -24,9 +24,15 @@ function init() {
 
 function renderTask(selectedList, newTaskDescription, newTaskPriority) {
   const tasksUl = document.querySelector(`[data-ul-id="${selectedList.id}"]`)
-  const newTask = new Task(selectedList, newTaskDescription, newTaskPriority)
-  const newTaskHTML = newTask.taskHTML()
-  tasksUl.innerHTML += newTaskHTML
+  if( Task.all().find(x => x.description === newTaskDescription)){
+    alert(`${newTaskDescription} exists already!`)
+    return
+  }else{
+    const newTask = new Task(selectedList, newTaskDescription, newTaskPriority)
+    const newTaskHTML = newTask.taskHTML()
+    tasksUl.innerHTML += newTaskHTML
+  }
+
 }
 
 
