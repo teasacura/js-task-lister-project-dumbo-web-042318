@@ -9,7 +9,7 @@ class TaskLister {
     <label for="parent-list">Select List:</label>
     <select id="parent-list">
     ${List.all().map((list) => {
-      return `<option data-list-id="${list.id}" value="${list.title}">${list.title}
+      return `<option data-list-id="${list.id}" selected='true' value="${list.title}">${list.title}
       </option>`
     })}
     </select>
