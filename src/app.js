@@ -1,9 +1,15 @@
 class App {
   static createList() {
       const inputBox = document.querySelector("#new-list-title");
-      const newList = new List(inputBox.value);
-      const listHTML = newList.listHTMLTemplate();
-      document.querySelector("#lists").innerHTML += listHTML;
+      if( List.all().find(x => x.title === inputBox.value)){
+        alert(`${inputBox.value} exists already!`)
+        return
+      }else{
+        const newList = new List(inputBox.value);
+        const listHTML = newList.listHTMLTemplate();
+        document.querySelector("#lists").innerHTML += listHTML;
+      }
+
    }
 
   static renderTaskForm() {
